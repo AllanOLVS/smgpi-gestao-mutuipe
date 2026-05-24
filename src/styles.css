@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap');
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+    /* SMGPI — Prefeitura de Mutuípe / VENYX Technology */
+    --color-primary: #C41E3A;
+    --color-primary-dark: #9B0000;
+    --color-primary-light: #F8E7EA;
+
+    --color-sidebar: #1A1A2E;
+    --color-sidebar-hover: #25253F;
+    --color-sidebar-active: #C41E3A;
+    --color-sidebar-text: #A8A8C0;
+    --color-sidebar-text-active: #FFFFFF;
+
+    --color-bg: #F2F2EF;
+    --color-surface: #FFFFFF;
+    --color-surface-2: #F8F8F5;
+    --color-border: #E4E4DC;
+    --color-border-strong: #C8C8C0;
+
+    --color-text-primary: #1A1A2E;
+    --color-text-secondary: #5A5A72;
+    --color-text-muted: #9090A8;
+    --color-text-inverse: #FFFFFF;
+
+    --color-accent: #D4AF37;
+    --color-accent-light: #FBF5DC;
+
+    --color-success: #2E7D32;
+    --color-success-light: #E8F5E9;
+    --color-warning: #E65100;
+    --color-warning-light: #FFF3E0;
+    --color-danger: #C41E3A;
+    --color-danger-light: #F8E7EA;
+    --color-info: #1565C0;
+    --color-info-light: #E3F2FD;
+
+    --mod-rh: #1565C0;
+    --mod-financeiro: #1B5E20;
+    --mod-tributacao: #E65100;
+    --mod-compras: #6A1B9A;
+    --mod-patrimonio: #BF360C;
+    --mod-saude: #00695C;
+    --mod-educacao: #0277BD;
+    --mod-obras: #F57F17;
+    --mod-bi: #C41E3A;
+
+    --sidebar-width: 240px;
+    --topbar-height: 64px;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+
+    --shadow-sm: 0 1px 3px rgba(26, 26, 46, 0.08);
+    --shadow-md: 0 4px 12px rgba(26, 26, 46, 0.10);
+    --shadow-lg: 0 8px 24px rgba(26, 26, 46, 0.12);
+
+    --transition: all 0.18s ease;
+
+    --font-display: 'Syne', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+
+    /* shadcn compat tokens (mapped to our palette) */
+    --background: #F2F2EF;
+    --foreground: #1A1A2E;
+    --card: #FFFFFF;
+    --card-foreground: #1A1A2E;
+    --popover: #FFFFFF;
+    --popover-foreground: #1A1A2E;
+    --primary: #C41E3A;
+    --primary-foreground: #FFFFFF;
+    --secondary: #F8F8F5;
+    --secondary-foreground: #1A1A2E;
+    --muted: #F8F8F5;
+    --muted-foreground: #5A5A72;
+    --accent: #FBF5DC;
+    --accent-foreground: #1A1A2E;
+    --destructive: #C41E3A;
+    --destructive-foreground: #FFFFFF;
+    --border: #E4E4DC;
+    --input: #E4E4DC;
+    --ring: #C41E3A;
+    --radius: 10px;
+}
+
+@theme inline {
+    --color-background: var(--color-bg);
+    --color-foreground: var(--color-text-primary);
+    --color-card: var(--color-surface);
+    --color-card-foreground: var(--color-text-primary);
+    --color-popover: var(--color-surface);
+    --color-popover-foreground: var(--color-text-primary);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-display: 'Syne', sans-serif;
+}
+
+@layer base {
+    * {
+        border-color: var(--color-border);
+    }
+
+    html,
+    body {
+        background-color: var(--color-bg);
+        color: var(--color-text-primary);
+        font-family: var(--font-body);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-display {
+        font-family: var(--font-display);
+        letter-spacing: -0.01em;
+    }
+}
+
+/* Utilities for SMGPI */
+.smgpi-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.smgpi-card-lg {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.smgpi-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 14px;
+    transition: var(--transition);
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.smgpi-btn-primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.smgpi-btn-primary:hover {
+    background: var(--color-primary-dark);
+}
+
+.smgpi-btn-ghost {
+    background: transparent;
+    color: var(--color-text-primary);
+    border-color: var(--color-border);
+}
+
+.smgpi-btn-ghost:hover {
+    background: var(--color-surface-2);
+}
+
+.smgpi-input {
+    width: 100%;
+    height: 44px;
+    padding: 0 14px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    color: var(--color-text-primary);
+    transition: var(--transition);
+}
+
+.smgpi-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.12);
+}
+
+.smgpi-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.smgpi-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.smgpi-table thead th {
+    text-align: left;
+    padding: 12px 16px;
+    background: var(--color-surface-2);
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.smgpi-table tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+}
+
+.smgpi-table tbody tr:hover {
+    background: var(--color-surface-2);
+}
+
+@keyframes smgpi-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(196, 30, 58, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 8px rgba(196, 30, 58, 0);
+    }
+}
+
+.smgpi-pulse {
+    animation: smgpi-pulse 2s infinite;
+}
+
+@keyframes smgpi-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.smgpi-fade-in {
+    animation: smgpi-fade-in 0.3s ease-out;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-border-strong);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
